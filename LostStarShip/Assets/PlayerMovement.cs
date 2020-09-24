@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    float leftMove = 0f;
+    float rightMove = 0f;
 
+    public Animator animator;
     public Rigidbody2D rb;
+
 
     Vector2 movement;
 
@@ -15,6 +19,12 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        leftMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(leftMove));
+
+        rightMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        animator.SetFloat("Speed", rightMove);
     }
 
     void FixedUpdate() 

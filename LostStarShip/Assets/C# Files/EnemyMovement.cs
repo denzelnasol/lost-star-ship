@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Rigidbody2D rb;
+    public float moveSpeed = 20f;
+    public float startPos;
 
     // Update is called once per frame
-    void Update()
+
+    public void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        startPos = transform.position.x;
+    }
+    public void Update()
+    {
+        rb.AddForce(Vector2.down * moveSpeed * Time.fixedDeltaTime);
     }
 }

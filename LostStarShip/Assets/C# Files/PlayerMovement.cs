@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
+{   
+
     public float moveSpeed = 5f;
     float leftMove = 0f;
     float rightMove = 0f;

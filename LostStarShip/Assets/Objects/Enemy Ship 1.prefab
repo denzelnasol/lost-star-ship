@@ -196,3 +196,5 @@ MonoBehaviour:
   rb: {fileID: 3395711741840888243}
   moveSpeed: 5
   startPos: 0
+  hitEffect: {fileID: 9214308127338385571, guid: 07c149ef17c120d4bb62e8dddb30de0b,
+    type: 3}
